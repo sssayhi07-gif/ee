@@ -9676,7 +9676,7 @@ ${rd.description ? `關係描述：${rd.description}` : ''}
       if (diffInSeconds < 86400) return Math.floor(diffInSeconds / 3600) + '小時前';
       if (diffInSeconds < 2592000) return Math.floor(diffInSeconds / 86400) + '天前';
 
-      return date.toLocaleDateString('zh-CN', {
+      return date.toLocaleDateString('zh-TW', {
         year: 'numeric',
         month: 'short',
         day: 'numeric',
