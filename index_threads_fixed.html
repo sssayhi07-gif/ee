@@ -13825,6 +13825,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 </div>
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
 
+
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
 </div>
     </div>
@@ -13847,7 +13848,6 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 </div>
 <!-- ▲▲▲ HTML 替換結束 ▲▲▲ -->
 
-<!-- ▲▲▲ HTML 替換結束 ▲▲▲ -->
 <!-- ▼▼▼ 用下面這【一整塊功能最全】的代碼，完整替換掉你舊的 id="weibo-screen" 的整個 div ▼▼▼ -->
 <div id="weibo-screen" class="screen">
     <!-- 這個容器將存放微博的所有頁面 -->
@@ -14034,7 +14034,9 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
                 </div>
             </div>
 
-            <div id="api-settings-screen" class="screen"><div class="header"><span class="back-btn" onclick="showScreen('home-screen')">‹</span><span>API 設置</span><span style="width: 30px;"></span></div><div class="form-container"><p style="font-size: 14px; color: #666; background-color: #f0f0f0; padding: 10px; border-radius: 8px;">提示: 若要使用“發送圖片”功能, 請務必選擇支援Vision(視覺)的模型, 如<code style="background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px;">gpt-4o</code>或<code style="background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px;">gpt-4-vision-preview</code>。</p><div class="form-group"><label for="proxy-url">反代位址 (不需要添加/v1噢~)</label><input type="text" id="proxy-url" placeholder="例如: https://api.openai.com"></div><div class="form-group"><label for="api-key">金鑰 (直連輪詢用英文逗號隔開)</label><input type="password" id="api-key" placeholder="sk-..."></div><div class="form-group"><label for="model-select">模型</label><select id="model-select"></select></div>
+            <div id="api-settings-screen" class="screen"><div class="header"><span class="back-btn" onclick="showScreen('home-screen')">‹</span><span>API 設置</span><span style="width: 30px;"></span></div><div class="form-container"><p style="font-size: 14px; color: #666; background-color: #f0f0f0; padding: 10px; border-radius: 8px;">提示: 若要使用“發送圖片”功能, 請務必選擇支援Vision(視覺)的模型, 如<code style="background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px;">gpt-4o</code>或<code style="background-color: #e0e0e0; padding: 2px 4px; border-radius: 4px;">gpt-4-vision-preview</code>。</p>
+</div><div class="form-group"><label for="api-url">API 地址（后缀不用添加/v1）</label><input type="url" id="api-url" name="url" placeholder="选择服务商可自动填写" required></div><div class="form-group"><label for="api-key">密钥 (Key)</label><input type="password" id="api-key" name="key" placeholder="请输入你的API密钥" required></div><button type="button" class="btn btn-secondary" id="fetch-models-btn"><span class="btn-text">点击拉取模型</span><div class="spinner"></div></button><div class="form-group"><label for="api-model">选择模型</label><select id="api-model" name="model" required><option value="">请先拉取模型列表</option></select></div>
+<div class="form-group"><label for="api-key">金鑰 (直連輪詢用英文逗號隔開)</label><input type="password" id="api-key" placeholder="sk-..."></div><div class="form-group"><label for="model-select">模型</label><select id="model-select"></select></div>
 <!-- ▼▼▼ 請將這段【全新的HTML代碼】黏貼到 “模型” 下拉清單的 form-group 之後 ▼▼▼ -->
 <div class="form-group">
     <label>API 預設</label>
@@ -15234,31 +15236,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     </div>
 </div>
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 【全新】這是微博手動操作的彈窗，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 前面 ▼▼▼ -->
+<!-- ▼▼▼ 【全新】這是微博手動操作的彈窗，黏貼到 </body> 前面 ▼▼▼ -->
 <div id="weibo-action-modal" class="modal">
     <div class="modal-content" style="height: auto; max-height: 80%;">
         <div class="modal-header">
@@ -16824,31 +16802,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     </div>
 </div>
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
- <!-- ▼▼▼ 【全新】這是微博關注列表的彈窗，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 前面 ▼▼▼ -->
+ <!-- ▼▼▼ 【全新】這是微博關注列表的彈窗，黏貼到 </body> 前面 ▼▼▼ -->
 <div id="weibo-following-modal" class="modal">
     <div class="modal-content" style="height: 60%;">
         <div class="modal-header">
@@ -17007,31 +16961,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
             <button class="save" id="ls-confirm-album-btn">確認上傳</button>
         </div>
     </div>
-</div><!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+</div><!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- 【全新】情侶空間-寫情書/回信的彈窗 -->
 <div id="ls-create-letter-modal" class="modal">
@@ -17057,31 +16987,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     </div>
 </div>
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- 【全新美化版】情侶空間-情書檢視器 -->
 <div id="ls-letter-viewer-modal" class="modal">
@@ -17135,31 +17041,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     </div>
 </div>
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- 【全新】情侶空間-提問彈窗 -->
 <div id="ls-ask-question-modal" class="modal">
@@ -17264,31 +17146,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 </div>
 
 <!-- ▲▲▲ HTML代碼黏貼結束 ▲▲▲ -->
-<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- 【全新】情侶番茄鐘-設置彈窗 -->
 <div id="ls-pomodoro-setup-modal" class="modal">
@@ -17557,31 +17415,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     </div>
 </div>
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 【全新】這是整個海龜湯功能的HTML，請黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤前 ▼▼▼ -->
+<!-- ▼▼▼ 【全新】這是整個海龜湯功能的HTML，請黏貼到 </body> 標籤前 ▼▼▼ -->
 
 <!-- 1. 海龜湯遊戲主介面 -->
 <div id="sea-turtle-soup-screen" class="screen">
@@ -17659,31 +17493,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         </div>
     </div>
 </div>
-<!-- ▼▼▼ 【全新】請將這兩塊代碼黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤前 ▼▼▼ -->
+<!-- ▼▼▼ 【全新】請將這兩塊代碼黏貼到 </body> 標籤前 ▼▼▼ -->
 
 <!-- 1. 海龜湯遊戲結算卡片 -->
 <div id="sts-summary-modal" class="modal">
@@ -17722,31 +17532,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 </div>
 
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 【全新】這是整個劇本殺功能的HTML，請黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤前 ▼▼▼ -->
+<!-- ▼▼▼ 【全新】這是整個劇本殺功能的HTML，請黏貼到 </body> 標籤前 ▼▼▼ -->
 
 <!-- 1. 劇本殺遊戲設置螢幕 -->
 <div id="script-kill-setup-screen" class="screen">
@@ -17803,31 +17589,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         </div>
     </div>
 </div>
-<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- 【全新】劇本殺自訂劇本管理模態框 -->
 <div id="script-kill-manager-modal" class="modal">
@@ -18053,31 +17815,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     </div>
 </div>
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 【全新】這是AI劇本生成器的彈窗，黏貼到
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body>前 ▼▼▼ -->
+<!-- ▼▼▼ 【全新】這是AI劇本生成器的彈窗，黏貼到</body>前 ▼▼▼ -->
 <div id="sk-ai-generator-modal" class="modal">
     <div class="modal-content" style="height: 90%;">
         <div class="modal-header">
@@ -18303,31 +18041,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
         <!-- 聊天氣泡將由JS動態生成 -->
     </div>
 </div>
-<!-- ▼▼▼ 把下面這一整塊全新的HTML代碼，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+<!-- ▼▼▼ 把下面這一整塊全新的HTML代碼，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- ▼▼▼ 用這整塊代碼替換舊的 id="taobao-screen" 的 div ▼▼▼ -->
 <div id="taobao-screen" class="screen">
@@ -18490,31 +18204,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 </div>
 
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- 【全新】物流詳情頁面 -->
 <div id="logistics-screen" class="screen">
@@ -18529,31 +18219,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 </div>
 
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 把這一整塊全新的HTML，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+<!-- ▼▼▼ 把這一整塊全新的HTML，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- 【全新】角色微博主頁螢幕 -->
 <div id="weibo-char-profile-screen" class="screen">
@@ -18770,31 +18436,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     </div>
 </div>
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- 【全新】情侶空間-情緒日記編輯彈窗 -->
 <div id="ls-diary-editor-modal" class="modal">
@@ -18853,31 +18495,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     </div>
 </div>
 <!-- ▲▲▲ 替換結束 ▲▲▲ -->
-<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方 ▼▼▼ -->
+<!-- ▼▼▼ 把這一整塊全新的HTML代碼，黏貼到 </body> 標籤的正上方 ▼▼▼ -->
 
 <!-- 【全新】AI生成商品結果/選擇彈窗 -->
 <div id="ai-generated-products-modal" class="modal">
@@ -18897,31 +18515,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 </div>
 
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 在 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方，黏貼下面這一整塊新代碼 ▼▼▼ -->
+<!-- ▼▼▼ 在 </body> 標籤的正上方，黏貼下面這一整塊新代碼 ▼▼▼ -->
 
 <!-- 【全新】飛行棋問題庫管理模態框 (已修改) -->
 <div id="ludo-qbank-manager-modal" class="modal">
@@ -18966,31 +18560,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 </div>
 
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 在 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤的正上方，黏貼下面這一整塊新代碼 ▼▼▼ -->
+<!-- ▼▼▼ 在 </body> 標籤的正上方，黏貼下面這一整塊新代碼 ▼▼▼ -->
 <!-- 【全新】飛行棋單個問題編輯器模態框 -->
 <div id="ludo-single-question-editor-modal" class="modal">
     <div class="modal-content" style="height: auto;">
@@ -19017,31 +18587,7 @@ box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     </div>
 </div>
 <!-- ▲▲▲ 新增HTML結束 ▲▲▲ -->
-<!-- ▼▼▼ 【全新】這是飛行棋遊戲結算卡片，請黏貼到 
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
-</body> 標籤前 ▼▼▼ -->
+<!-- ▼▼▼ 【全新】這是飛行棋遊戲結算卡片，請黏貼到 </body> 標籤前 ▼▼▼ -->
 <div id="ludo-summary-modal" class="modal">
     <div class="modal-content" style="height: auto; max-height: 80%;">
         <div class="modal-header">
@@ -58801,30 +58347,6 @@ const avatarFrames = [
 <!-- ▲▲▲ 檔選擇器結束 ▲▲▲ -->
 <input type="file" id="world-book-import-input" accept=".json, .jsonl" style="display: none;">
 <input type="file" id="ludo-qbank-import-input" accept=".json" hidden>
-
-  <!-- Threads screen container (auto-rendered by threads-single-file.js) -->
-  <div id="threads-screen" class="screen"></div>
-  <script src="https://sssayhi07-gif.github.io/ee/threads-single-file.js" defer></script>
-<script>
-(function(){
-  function addThreadsIcon(){
-    var grids = document.querySelectorAll('#home-screen .app-grid, #home-screen .app-row, .app-grid, .app-row');
-    if(!grids || grids.length===0) return;
-    // avoid duplicate
-    if (document.querySelector('.app-icon[data-app="threads"]')) return;
-    var grid = grids[0];
-    var icon = document.createElement('div');
-    icon.className = 'app-icon';
-    icon.setAttribute('data-app','threads');
-    icon.setAttribute('title','Threads');
-    icon.onclick = function(){ try { showScreen('threads-screen'); } catch(e) { document.getElementById('threads-screen').style.display='block'; } };
-    icon.innerHTML = '<div class="icon-bg"><img alt="Threads" src="https://i.postimg.cc/7ZxwM7LT/threads-icon.png"/></div><div class="label">Threads</div>';
-    grid.appendChild(icon);
-  }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', addThreadsIcon);
-  else addThreadsIcon();
-})();
-</script>
 </body>
 </html>
 
